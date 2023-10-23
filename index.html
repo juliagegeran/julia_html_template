@@ -1,36 +1,277 @@
+<!--Tell the browser what kind of file this is-->
 <!DOCTYPE html>
 
 <html lang="en">
+  <!--You can't see what is in the head-->
   <head>
-    <meta charset="UTF-8">
+    <!--Title: What shows up on the tab?-->
+    <title>Pompompurin's Secret Pudding Recipe</title>
+
+    <!--Meta: information about your website-->
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content = "Julia Ran">
+    <meta name="keywords" content = "Pompompurin, Sanrio, recipe, pudding">
+    <meta name= "description" content = "A guide to making the best pudding of your life">
+
+    <!--Style: how do you want each structure to look-->
     <style> 
-            
+    /*Body: applies to everything in the body*/
       body {
         background: #d98628;
         background-image: url("/images/pompompurin_background.webp");
-        padding: 0 0px; 
-        justify-content: flex-start;
+        justify-content: center;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: flexbox;
+        cursor: url("/images/rsz_3pudding-removebg.png"), auto;
+
+      }
+    /*Title Division*/
+      div.title {
+        box-sizing:border-box;
+        margin: 10px 10px 10px 50px;
+        border-radius: 100px;
+        width: 90%;
+        float: middle;
+        opacity: 99%;
+        background-color: rgba(247, 246, 234, 0.993);  
+        border: solid black thick;
+      }
+    /*Ingredients Division*/
+      div.ingredients {
+        box-sizing:border-box;
+        margin: 10px 10px 10px 50px;
+        padding-bottom: 50px;
+        border-radius: 100px;
+        width: 90%;
+        float: middle;
+        opacity: 99%;
+        background-color: rgba(247, 246, 234, 0.993);  
+        border: solid black thick;
+      }
+    /*Instructions Division*/
+      div.instructions {
+        box-sizing:border-box;
+        margin: 10px 10px 10px 50px;
+        padding-bottom: 50px;
+        border-radius: 100px;
+        width: 90%;
+        float: middle;
+        opacity: 99%;
+        background-color: rgba(247, 246, 234, 0.993);  
+        border: solid black thick;
+      }
+    /*Sources Division*/
+      div.sources {
+        box-sizing:border-box;
+        margin: 10px 10px 10px 50px;
+        padding-bottom: 50px;
+        border-radius: 100px;
+        width: 90%;
+        float: middle;
+        opacity: 99%;
+        background-color: rgba(247, 246, 234, 0.993);  
+        border: solid black thick;
+      }
+    /*Heading 1*/
+      h1{
+        text-align: center;
+        color: black;
+        font-size: 50px;
+      }
+    /*Heading 2*/
+      h2{
+        text-align: center;
+        color: black;
+        font-size: 25px;
+      }
+    /*Heading 3*/
+      h3{
+        text-align: left;
+        color: black;
+        font-size:22px;
+        margin: 0px 0px -20px -10px;
+        padding-top: 10px;
+      }
+    /*Unordered List: Ingredients*/
+      ul.ingredients_list{
+        list-style-image: url("/images/rsz_3pudding-removebg.png");
+        padding-left: 12%;
+      }
+    /*For every item in the Ingredients List*/
+      li.ingredients_list{
+        margin:-1px 0px 0px 20px;
+        height: 10px;
+        text-align: left;
+        color: brown;
+        font-size: 20px;
+        padding-left: 20px;
+        padding-bottom: -2%;
+        padding-top: -2%
+      }
+    /*Unordered List: Instructions*/
+      ul.instruction_list{
+        list-style-type: none;
+        padding-right:40px;
+        padding-left:10px;
+        margin-left:40px;
+        font-size: 20px;
+        text-indent: 0;
+      }
+    /*Specify each bullet point of text in the Instructions list as a label for a checkbox. We call these labels "Containers"*/
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        margin-right:30px;
+        cursor: url("/images/rsz_3pudding-removebg.png"), pointer;
+        font-size: 22px;
+      }
+    /* Hide the browser's default checkbox */
+      .container input {
+        list-style-type: none;
+        position: absolute;
+        opacity: 0;
+        cursor: url("/images/rsz_3pudding-removebg.png"), pointer;
+        height: 0;
+        width: 0;
+
+      }
+    /* Create a checkbox in the shape of Pompompurin*/
+      .checkmark {
+        list-style-type: none;
+        position:absolute;
+        top: 0;
+        left: 10px;
+        padding-right:10px;
+        padding-bottom:10px;
+        margin-left:-20px;
+        height: 30px;
+        width: 30px;
+        background-image: url("images/pompompurin_white.png");
+        background-size: cover;
+      }
+    /* On mouse-over, add a dark golden background color */
+      .container:hover input ~ .checkmark {
+        background-color: darkgoldenrod;
+        border-radius: 30px;
+        cursor: url("/images/rsz_3pudding-removebg.png"), pointer;
+      }
+    /* When the checkbox is checked, make pompompurin turn yellow */
+      .container input:checked ~ .checkmark {
+        background-image: url("images/pompompurin_icon2-removebg.png");
+        border-radius: 30px;
+      }
+    /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
         display: none;
       }
-
-
-      div{
-        box-sizing: border-box;
-        width: 50%;
-        float: center;
-        padding: 15px;
-        border: 1px solid red;
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
       }
-
     </style>
-    <title>Pompompurin's Secret Pudding Recipe</title>
+
   </head>
 
+    <!--You can see what is on the body-->
   <body>
-        <div class="box" id = "box1">
-      <h1>Pompompurin's Secret Pudding Recipe</h1>
-    </div>
+      <div class="title">
+        <h1>Pompompurin's Secret Pudding Recipe</h1>
+      </div>
+      
+      <div class = "ingredients"> 
+        <h2>Ingredients</h2>
+        <ul class = "ingredients_list" id = "caramel_sauce"> 
+          <h3>Caramel Sauce:</h3>
+          <li class = "ingredients_list"><p>30 grams sugar</p></li>
+            <li class = "ingredients_list"><p>2 teaspoons water (divided) </p></li>
+        </ul>
+
+        <ul class = "ingredients_list" id = "pudding">
+          <h3>Pudding:</h3>
+            <li class = "ingredients_list"><p>320 grams whole milk</p></li>
+            <li class = "ingredients_list"><p>80 grams heavy cream</p></li>
+            <li class = "ingredients_list"><p>80 grams sugar</p></li>
+            <li class = "ingredients_list"><p>2 whole large eggs</p></li>
+            <li class = "ingredients_list"><p>1 large egg yolk</p></li>
+            <li class = "ingredients_list"><p>&#189; teaspoon vanilla bean paste or vanilla extract</p></li>
+        </ul>
+       </div>
+      
+       <div class = "instructions">
+        <h2>Instructions:</h2>
+        <ul class = "instruction_list">
+          
+          <li class = "instruction_list">
+              <label class="container"> Preheat oven to 300˚F (150˚C). Prepare 5 (4-ouces) glass jars or ramekins.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label> 
+          </li>
+          
+          <li class = "instruction_list" id = "step_1">
+            <label class="container"> For the caramel, in a small saucepan, combine sugar and 1 teaspoon water. Cook over medium heat, stirring often with a high heat resistant rubber spatula or wooden spoon. Sugar will form clumps, but melt eventually into a dark amber color sauce. Add the 1 teaspoon water into the sauce. Be very careful, the caramel will bubble rapidly when water is added. Quickly divide the sauce into the glass jars as the caramel will harden. Don’t worry if not every jar have the same amount of sauce and the sauce is not spread evenly at the bottom.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+
+          <li class = "instruction_list" id = "step_2">
+            <label class="container"> Bring a kettle of water to a boil.
+              For the pudding,
+              
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+
+          <li class = "instruction_list" id = "step_3">
+              <label class="container"> For the pudding, in a medium bowl, whisk together eggs and egg yolk until light foam begins to form. Set aside.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+          </li>
+          
+          <li class = "instruction_list" id = "step_4">
+            <label class="container"> In a small saucepan over medium heat, combine milk, heavy cream, and sugar. Cook until sugar just melted, stirring often. Stir in vanilla extract (or vanilla bean paste). Gradually add all the milk mixture into the yolk mixture, whisking continuously.
+
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+
+          <li class = "instruction_list" id = "step_5">
+            <label class="container"> Pour the mixture through a sieve into a large measuring cup. Remove bubbles with a piece of wax paper or parchment paper, by pushing it directly on top of the mixture and pulling it away. If needed, repeat one more time.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+
+          <li class = "instruction_list" id = "step_6">
+            <label class="container"> Divide the mixture evenly into the glass jars. Prepare a water bath. Put the glass jars into a large baking pan or roasting pan. Pour enough boiling water into the pan to come halfway up the sides of the jars. Bake just until the purin is slightly puffed on top, but still jiggling in the center, about 30 to 35 minutes.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+        
+          <li class = "instruction_list" id = "step_7">
+            <label class="container"> Carefully transfer the jars on to a cooling rack and cool until slightly warm. Cool in the fridge for at least 3 hours or until cold. Cover with plastic wrap when cool completely. Serve within 3 days.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+        
+        </ul>
+       </div>
+      <div class = "sources">
+        <h2>Sources</h2>
+        <ul>
+          <li><a href="https://www.themissinglokness.com/2018/09/20/purin-japanese-caramel-custard-pudding/">Lockness, Purin (Japanese Caramel Custard Pudding)</a></li>
+        </ul>
+      </div>
   </body>
 </html>
